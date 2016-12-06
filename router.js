@@ -32,3 +32,7 @@ function js_route(route,response){
 }
 
 exports.route = route;
+//另一种写法
+// module.exports={
+//     route:route
+// }
