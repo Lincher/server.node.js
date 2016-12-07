@@ -1,12 +1,15 @@
 const Koa = require('koa');
 
+const router = require('koa-router')();
+
 const app = new Koa();
 
 app.use(async (ctx,next)=>{
+    console.log('Process ${ctx.request.method}&{ctx.request.url}...');
     await next();
-    ctx.response.type = 'text/html';
-    ctx.response.body = '<h1>Hello,koa2!</h1>';
 });
+
+
 
 app.listen(8888);
 console.log('app started at port 8888....');
